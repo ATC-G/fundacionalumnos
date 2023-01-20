@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Button, Col, Container, Row } from "reactstrap";
@@ -11,55 +12,50 @@ function Cobranza(){
     const [loading, setLoading] = useState(false)
     const [items, setItems] = useState([]);
 
-    const columns = [
-        {
-          text: "id",
-          dataField: "id",
-          hidden: true,
-        },
-        {
-            text: "No Doc",
-            dataField: "noDocumento",          
-        },
-        {
-            text: "Familia",
-            dataField: "familia",          
-        },
-        {
-            text: "Mes",
-            dataField: "mes",          
-        },
-        {
-            text: "Monto",
-            dataField: "monto",          
-        },
-        {
-            text: "Fecha vencimiento",
-            dataField: "fechaVencimiento",          
-        },
-        {
-            text: "Documento SAP",
-            dataField: "documentoSAP",          
-        },
-        {
-            text: "Estatus",
-            dataField: "estatus",          
-        },
-        {
-            dataField: "menu",
-            isDummyField: true,
-            editable: false,
-            text: "Acción",
-            formatter: (cellContent, row) => (
-                <div className="d-flex">
-                    <div className="pe-2"><Button color="success" size="sm">Pagar</Button></div>
-                    <div className="pe-2"><Button color="warning" size="sm">Facturar</Button></div>
-                    <div className="pe-2"><Button color="info" size="sm">Enviar</Button></div>
-                </div>
-            )
-        },
-        
-    ];
+    const columns = useMemo(
+        () => [
+            {
+                Header: "No Doc",
+                accessor: "noDocumento",          
+            },
+            {
+                Header: "Familia",
+                accessor: "familia",          
+            },
+            {
+                Header: "Mes",
+                accessor: "mes",          
+            },
+            {
+                Header: "Monto",
+                accessor: "monto",          
+            },
+            {
+                Header: "Fecha vencimiento",
+                accessor: "fechaVencimiento",          
+            },
+            {
+                Header: "Documento SAP",
+                accessor: "documentoSAP",          
+            },
+            {
+                Header: "Estatus",
+                accessor: "estatus",          
+            },
+            {
+                id: 'acciones',
+                Header: "",
+                Cell: ({row}) => (
+                    <div className="d-flex">
+                        <div className="pe-2"><Button color="success" size="sm">Pagar</Button></div>
+                        <div className="pe-2"><Button color="warning" size="sm">Facturar</Button></div>
+                        <div className="pe-2"><Button color="info" size="sm">Enviar</Button></div>
+                    </div>
+                ),          
+            }        
+        ],
+        []
+    );
   
     const cardChildren = (
         <>
@@ -82,7 +78,7 @@ function Cobranza(){
             <Col xl="12">                                    
                 <SimpleTable
                     columns={columns}
-                    items={items} 
+                    data={items} 
                 />
             </Col>            
         </Row>

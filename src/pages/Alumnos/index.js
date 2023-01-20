@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import BuscarAlumnos from "../../components/Alumnos/BuscarAlumnos";
@@ -12,30 +12,27 @@ function Alumnos(){
     const [loading, setLoading] = useState(false)
     const [items, setItems] = useState([]);
 
-    const columns = [
-        {
-          text: "id",
-          dataField: "id",
-          hidden: true,
-        },
-        {
-            text: "RFC",
-            dataField: "rfc",          
-        },
-        {
-            text: "Nombre",
-            dataField: "nombre",          
-        },
-        {
-            text: "Razón social",
-            dataField: "razonSocial",          
-        },
-        {
-            text: "Correo electrónico",
-            dataField: "correo",          
-        },
-        
-    ];
+    const columns = useMemo(
+        () => [
+          {
+            Header: 'RFC',
+            accessor: 'rfc', // accessor is the "key" in the data
+          },
+          {
+            Header: 'Nombre',
+            accessor: 'nombre',
+          },
+          {
+            Header: 'Razón social',
+            accessor: 'razonSocial',
+          },
+          {
+            Header: 'Correo electrónico',
+            accessor: 'correo',
+          },
+        ],
+        []
+    );
   
     const cardChildren = (
         <>
@@ -63,7 +60,7 @@ function Alumnos(){
             <Col xl="12">                                    
                 <SimpleTable
                     columns={columns}
-                    items={items} 
+                    data={items} 
                 />
             </Col>            
         </Row>

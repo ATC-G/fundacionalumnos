@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
@@ -12,30 +13,27 @@ function Documento(){
     const [loading, setLoading] = useState(false)
     const [items, setItems] = useState([]);
 
-    const columns = [
-        {
-          text: "id",
-          dataField: "id",
-          hidden: true,
-        },
-        {
-            text: "Mes",
-            dataField: "mes",          
-        },
-        {
-            text: "Concepto de pago",
-            dataField: "conceptoPago",          
-        },
-        {
-            text: "Monto",
-            dataField: "monto",          
-        },
-        {
-            text: "Fecha límite de pago",
-            dataField: "fechaLimitePago",          
-        },
-        
-    ];
+    const columns = useMemo(
+        () => [
+          {
+            Header: 'Mes',
+            accessor: 'mes', // accessor is the "key" in the data
+          },
+          {
+            Header: 'Concepto de pago',
+            accessor: 'conceptoPago',
+          },
+          {
+            Header: 'Monto',
+            accessor: 'monto',
+          },
+          {
+            Header: 'Fecha límite de pago',
+            accessor: 'fechaLimitePago',
+          },
+        ],
+        []
+    );
   
     const cardChildren = (
         <>
@@ -63,7 +61,7 @@ function Documento(){
             <Col xl="12">                                    
                 <SimpleTable
                     columns={columns}
-                    items={items} 
+                    data={items} 
                 />
             </Col>            
         </Row>
