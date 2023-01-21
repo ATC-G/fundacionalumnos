@@ -10,6 +10,7 @@ export default function CardBasic({title, children}){
             <CardBody className="p-0">
                 <div className="accordion">
                     <div className="accordion-item">
+                        {title && 
                         <h2 className="accordion-header">
                             <button
                             className={classNames(
@@ -23,7 +24,7 @@ export default function CardBasic({title, children}){
                             >
                             {title}
                             </button>
-                        </h2>
+                        </h2>}
 
                         <Collapse isOpen={accordionSearch} className="accordion-collapse">
                             <div className="accordion-body">

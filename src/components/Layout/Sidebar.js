@@ -118,6 +118,36 @@ function Sidebar(){
                             <i className="bx bx-face"></i>
                             <span>Alumnos</span>
                         </Link>              
+                      </li> 
+                      <li>
+                        <Link to="/configuracion" className="">
+                            <i className="bx bx-cog"></i>
+                            <span>Configuración</span>
+                        </Link>  
+                      </li>
+                      <li>
+                        <Link to="/cicloescolar" className="">
+                            <i className="bx bx-question-mark"></i>
+                            <span>Ciclo escolar</span>
+                        </Link> 
+                      </li>
+                      <li> 
+                        <Link to="/concepto" className="">
+                            <i className="bx bx-question-mark"></i>
+                            <span>Conceptos</span>
+                        </Link> 
+                      </li>
+                      <li> 
+                        <Link to="/colegiatura" className="">
+                            <i className="bx bx-question-mark"></i>
+                            <span>Colegiatura</span>
+                        </Link> 
+                      </li>
+                      <li>
+                        <Link to="/pagos" className="">
+                            <i className="bx bx-question-mark"></i>
+                            <span>Pasarela de pagos</span>
+                        </Link>           
                       </li>                        
 
                       {userLogued?.Role?.name === 'ADMINISTRADOR' &&

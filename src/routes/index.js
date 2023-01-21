@@ -2,7 +2,9 @@ import { Redirect } from "react-router-dom"
 import Alumnos from "../pages/Alumnos"
 import Login from "../pages/Authentication/Login"
 import Logout from "../pages/Authentication/Logout"
+import CicloEscolar from "../pages/CicloEscolar"
 import Cobranza from "../pages/Cobranza"
+import Configuracion from "../pages/Configuracion"
 import Dashboard from "../pages/Dashboard"
 import Documento from "../pages/Documento"
 
@@ -54,6 +56,8 @@ const managerRoutes = [
     { path: "/alumnos", exact: true, component: Alumnos },
     { path: "/cobranza", exact: true, component: Cobranza },
     { path: "/documento", exact: true, component: Documento },
+    { path: "/configuracion", exact: true, component: Configuracion },
+    { path: "/cicloescolar", exact: true, component: CicloEscolar },
  
     //  //satges
     //  { path: "/relationship-list", exact: true, component: RelationshipList },
