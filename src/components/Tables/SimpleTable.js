@@ -38,11 +38,6 @@ export default function SimpleTable({columns, data}){
                                         return (
                                         <td
                                             {...cell.getCellProps()}
-                                            style={{
-                                            padding: '10px',
-                                            border: 'solid 1px gray',
-                                            background: 'papayawhip',
-                                            }}
                                         >
                                             {cell.render('Cell')}
                                         </td>

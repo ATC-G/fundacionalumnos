@@ -1,31 +1,55 @@
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import { withRouter } from "react-router-dom";
-import { Col, Container, Row } from "reactstrap";
+import { Button, Col, Container, Row } from "reactstrap";
 import Breadcrumbs from "../../components/Common/Breadcrumbs";
 import CardBasic from "../../components/Common/CardBasic";
-import BuscarConfiguracion from "../../components/Configuracion/BuscarConfiguracion";
 import SimpleLoad from "../../components/Loader/SimpleLoad";
 import SimpleTable from "../../components/Tables/SimpleTable";
-import { testItemsCicloEscolar } from "../../data/testData";
+import { testItemsColegiatura } from "../../data/testData";
 
-function Configuracion(){  
+function Colegiatura(){  
     const [loading, setLoading] = useState(false)
-    const [items, setItems] = useState(testItemsCicloEscolar);
+    const [items, setItems] = useState(testItemsColegiatura);
 
     const columns = useMemo(
         () => [
           {
-            Header: 'Mes calendario',
-            accessor: 'mes', // accessor is the "key" in the data
+            Header: 'No Doc',
+            accessor: 'noDocumento', // accessor is the "key" in the data
           },
           {
-            Header: 'Fecha Límite de pago',
-            accessor: 'fechaLimitePago',
+            Header: 'Mes',
+            accessor: 'mes',
           },
           {
-            Header: '% interes',
+            Header: 'Monto',
+            accessor: 'monto',
+          },
+          {
+            Header: 'Beca',
+            accessor: 'beca',
+          },
+          {
+            Header: 'Interes',
             accessor: 'interes',
           },
+          {
+            Header: 'Total a pagar',
+            accessor: 'totalPagar',
+          },
+          {
+            Header: 'Estatus',
+            accessor: 'estatus',
+          },
+          {
+            id: 'acciones',
+            Header: "",
+            Cell: ({row}) => (
+                <div className="d-flex">
+                    <div className="pe-2"><Button color="success" size="sm">Pagar</Button></div>
+                </div>
+            ),          
+            }
         ],
         []
     );
@@ -46,23 +70,6 @@ function Configuracion(){
             </Col>            
         </Row>
     )
-  
-    const cardChildren = (
-        <>
-            <Row>
-                <Col xs="12" md="12">
-                    <BuscarConfiguracion />
-                </Col>
-            </Row>
-            <Row className="my-5">
-                <Col>
-                    {cardHandleList}
-                </Col>
-            </Row>
-        </>
-    );
-
-    
     
     return (
         <>
@@ -70,22 +77,22 @@ function Configuracion(){
             <Container fluid>
               {/* Render Breadcrumb */}
               <Breadcrumbs
-                title={'Configuración'}
-                breadcrumbItem={"Configuración"}
+                title={'Colegiatura'}
+                breadcrumbItem={"Colegiatura"}
               />
 
               <Row>
                 <Col xs="12" lg="12">
                     <CardBasic 
                         title={null}
-                        children={cardChildren}
+                        children={cardHandleList}
                     />                    
                 </Col>
-              </Row>              
+              </Row>
             </Container>
           </div>
         </>
       );
   }
   
-  export default withRouter(Configuracion)
+  export default withRouter(Colegiatura)

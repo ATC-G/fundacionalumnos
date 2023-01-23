@@ -4,9 +4,12 @@ import Login from "../pages/Authentication/Login"
 import Logout from "../pages/Authentication/Logout"
 import CicloEscolar from "../pages/CicloEscolar"
 import Cobranza from "../pages/Cobranza"
+import Colegiatura from "../pages/Colegiatura"
+import Concepto from "../pages/Concepto"
 import Configuracion from "../pages/Configuracion"
 import Dashboard from "../pages/Dashboard"
 import Documento from "../pages/Documento"
+import PasarelaPagos from "../pages/PasarelaPagos"
 
 const authProtectedRoutes = [
     { path: "/logout", component: Logout },
@@ -58,6 +61,9 @@ const managerRoutes = [
     { path: "/documento", exact: true, component: Documento },
     { path: "/configuracion", exact: true, component: Configuracion },
     { path: "/cicloescolar", exact: true, component: CicloEscolar },
+    { path: "/concepto", exact: true, component: Concepto },
+    { path: "/colegiatura", exact: true, component: Colegiatura },
+    { path: "/pagos", exact: true, component: PasarelaPagos },
  
     //  //satges
     //  { path: "/relationship-list", exact: true, component: RelationshipList },

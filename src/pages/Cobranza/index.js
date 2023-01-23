@@ -7,10 +7,11 @@ import Breadcrumbs from "../../components/Common/Breadcrumbs";
 import CardBasic from "../../components/Common/CardBasic";
 import SimpleLoad from "../../components/Loader/SimpleLoad";
 import SimpleTable from "../../components/Tables/SimpleTable";
+import { testItemsCobranza } from "../../data/testData";
 
 function Cobranza(){  
     const [loading, setLoading] = useState(false)
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(testItemsCobranza);
 
     const columns = useMemo(
         () => [

@@ -4,13 +4,13 @@ import { Col, Container, Row } from "reactstrap";
 import BuscarCicloEscolar from "../../components/CicloEscolar/BuscarCicloEscolar";
 import Breadcrumbs from "../../components/Common/Breadcrumbs";
 import CardBasic from "../../components/Common/CardBasic";
-import BuscarConfiguracion from "../../components/Configuracion/BuscarConfiguracion";
 import SimpleLoad from "../../components/Loader/SimpleLoad";
 import SimpleTable from "../../components/Tables/SimpleTable";
+import { testItemsCicloEscolar } from "../../data/testData";
 
 function CicloEscolar(){  
     const [loading, setLoading] = useState(false)
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(testItemsCicloEscolar);
 
     const columns = useMemo(
         () => [
