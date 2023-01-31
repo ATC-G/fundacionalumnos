@@ -1,36 +1,34 @@
-import { useMemo } from "react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
-import FormAlumnos from "../../components/Alumnos/FormAlumnos";
 import Breadcrumbs from "../../components/Common/Breadcrumbs";
 import CardBasic from "../../components/Common/CardBasic";
-import BuscarDocumento from "../../components/Documento/BuscarDocumento";
 import SimpleLoad from "../../components/Loader/SimpleLoad";
 import SimpleTable from "../../components/Tables/SimpleTable";
-import { testItemsDocumentos } from "../../data/testData";
+import BuscarDatosFiscales from "../../components/DatosFiscales/BuscarDatosFiscales";
+import FormDatosFiscales from "../../components/DatosFiscales/FormDatosFiscales";
 
-function Documento(){  
+function DatosFiscales(){  
     const [loading, setLoading] = useState(false)
-    const [items, setItems] = useState(testItemsDocumentos);
+    const [items, setItems] = useState([]);
 
     const columns = useMemo(
         () => [
           {
-            Header: 'Mes',
-            accessor: 'mes', // accessor is the "key" in the data
+            Header: 'RFC',
+            accessor: 'rfc', // accessor is the "key" in the data
           },
           {
-            Header: 'Concepto de pago',
-            accessor: 'conceptoPago',
+            Header: 'Nombre',
+            accessor: 'nombre',
           },
           {
-            Header: 'Monto',
-            accessor: 'monto',
+            Header: 'Razón social',
+            accessor: 'razonSocial',
           },
           {
-            Header: 'Fecha límite de pago',
-            accessor: 'fechaLimitePago',
+            Header: 'Correo electrónico',
+            accessor: 'correo',
           },
         ],
         []
@@ -39,13 +37,13 @@ function Documento(){
     const cardChildren = (
         <>
             <Row>
-                <Col xs="12" md="12">
-                    <BuscarDocumento />
+                <Col xs="12" md="3">
+                    <BuscarDatosFiscales />
                 </Col>
             </Row>
-            <Row className="mt-2 bg-primary bg-opacity-10 p-2">
+            <Row>
                 <Col>
-                    <FormAlumnos />
+                    <FormDatosFiscales />
                 </Col>
             </Row>
         </>
@@ -72,6 +70,7 @@ function Documento(){
         <>
           <div className="page-content">
             <Container fluid>
+              {/* Render Breadcrumb */}
               <Breadcrumbs
                 title={'Alumnos'}
                 breadcrumbItem={"Alumnos"}
@@ -80,7 +79,7 @@ function Documento(){
               <Row>
                 <Col xs="12" lg="12">
                     <CardBasic 
-                        title="Documento"
+                        title="Alumnos"
                         children={cardChildren}
                     />                    
                 </Col>
@@ -97,4 +96,4 @@ function Documento(){
       );
   }
   
-  export default withRouter(Documento)
+  export default withRouter(DatosFiscales)

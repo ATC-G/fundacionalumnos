@@ -3,7 +3,7 @@ import { Button, Col, Form, Input, Label, Row } from "reactstrap";
 import * as Yup from "yup";
 import { FIELD_REQUIRED, SELECT_OPTION } from "../../constants/messages";
 
-export default function FormAlumnos(){
+export default function FormDatosFiscales(){
 
     const formik = useFormik({
         initialValues: {

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.svg";
 import logoLightSvg from "../../assets/images/logo-light.svg";
 import ProfileMenu from "./ProfileMenu";
+import CartShooping from "./CartShooping";
 
 function Header(){
     const [search, setsearch] = useState(false);
@@ -131,7 +132,8 @@ function Header(){
                   </button>
                 </div>
     
-                {/* <NotificationDropdown /> */}
+                
+                <CartShooping />
                 <ProfileMenu />
                             
               </div>

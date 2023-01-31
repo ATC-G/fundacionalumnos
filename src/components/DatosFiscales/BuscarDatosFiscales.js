@@ -3,7 +3,7 @@ import { Button, Col, Form, InputGroup, Row } from "reactstrap";
 import * as Yup from "yup";
 import { FIELD_REQUIRED } from "../../constants/messages";
 
-export default function BuscarAlumnos(){
+export default function BuscarDatosFiscales(){
 
     const formik = useFormik({
         initialValues: {

@@ -4,12 +4,10 @@ import SimpleBar from "simplebar-react";
 import MetisMenu from "metismenujs";
 
 import logo from "../../assets/images/logo.png";
-import useLoguedUser from "../../hooks/useLoguedUser";
 
 function Sidebar(){
     const ref = useRef();
     const location = useLocation();
-    const userLogued = useLoguedUser();
     
     useEffect(() => {
         const pathName = location.pathname;
@@ -101,90 +99,30 @@ function Sidebar(){
                 <div id="sidebar-menu">
                   <ul className="metismenu list-unstyled" id="side-menu">
                       <li className="menu-title">Menu </li>
-                      <li>
-                        <Link to="/documento" className="">
-                            <i className="dripicons-align-justify"></i>
-                            <span>Documentos</span>
-                        </Link>              
-                      </li>
-                      <li>
-                        <Link to="/cobranza" className="">
-                            <i className="bx bxs-filter-alt"></i>
-                            <span>Cobranza</span>
-                        </Link>              
-                      </li>
-                      <li>
-                        <Link to="/alumnos" className="">
-                            <i className="bx bx-face"></i>
-                            <span>Alumnos</span>
-                        </Link>              
-                      </li> 
-                      <li>
-                        <Link to="/configuracion" className="">
-                            <i className="bx bx-cog"></i>
-                            <span>Configuración</span>
-                        </Link>  
-                      </li>
-                      <li>
-                        <Link to="/cicloescolar" className="">
-                            <i className="bx bx-question-mark"></i>
-                            <span>Ciclo escolar</span>
-                        </Link> 
-                      </li>
-                      <li> 
-                        <Link to="/concepto" className="">
-                            <i className="bx bx-question-mark"></i>
-                            <span>Conceptos</span>
-                        </Link> 
-                      </li>
                       <li> 
                         <Link to="/colegiatura" className="">
-                            <i className="bx bx-question-mark"></i>
+                            <i className="bx bx-calendar"></i>
                             <span>Colegiatura</span>
                         </Link> 
                       </li>
                       <li>
                         <Link to="/pagos" className="">
-                            <i className="bx bx-question-mark"></i>
-                            <span>Pasarela de pagos</span>
+                            <i className="bx bx-money"></i>
+                            <span>Pagos</span>
                         </Link>           
-                      </li>                        
-
-                      {userLogued?.Role?.name === 'ADMINISTRADOR' &&
-                      <>
-                        <li className="menu-title">Security </li>
-                        <li>
-                          <Link to="/user-list" className="">
-                              <i className="bx bxs-user-detail"></i>
-                              <span>User</span>
-                          </Link>              
-                        </li>
-                      </>
-                      }
-
-                      {/* {(userLogued?.Role?.name === 'ADMINISTRADOR' || userLogued?.Role?.name === 'MANAGER') && <li className="menu-title">Catalogs</li> }
-                      {(userLogued?.Role?.name === 'ADMINISTRADOR' || userLogued?.Role?.name === 'MANAGER') && 
+                      </li>
                       <li>
-                          <Link to="/#" className="has-arrow">
-                              <i className='bx bx-select-multiple'></i>
-                              <span>Catalogs List</span>
-                          </Link>
-                          <ul className="sub-menu" aria-expanded="false">
-                            <li>
-                              <Link to="/stage-list">Stages </Link>                 
-                            </li>
-                            <li>
-                              <Link to="/relationship-list">Relationships</Link>                 
-                            </li>
-                            <li>
-                              <Link to="/topconfiguration-list">Header Report</Link>                 
-                            </li>
-                            <li>
-                              <Link to="/survey-list">Survey</Link>                 
-                            </li>
-                          </ul>
-                      </li> */}
-                      }
+                        <Link to="/datos-fiscales" className="">
+                            <i className="bx bx-shield-quarter"></i>
+                            <span>Datos fiscales</span>
+                        </Link>              
+                      </li>
+                      <li>
+                        <Link to="/ayuda" className="">
+                            <i className="bx bx-help-circle"></i>
+                            <span>Ayuda</span>
+                        </Link>              
+                      </li>
                   </ul>
                 </div>
             </SimpleBar>
