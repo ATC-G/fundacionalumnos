@@ -112,9 +112,9 @@ function Sidebar(){
                         </Link>           
                       </li>
                       <li>
-                        <Link to="/datos-fiscales" className="">
+                        <Link to="/datos-facturacion" className="">
                             <i className="bx bx-shield-quarter"></i>
-                            <span>Datos fiscales</span>
+                            <span>Datos de facturación</span>
                         </Link>              
                       </li>
                       <li>

@@ -28,7 +28,7 @@ const managerRoutes = [
      //satges
     { path: "/colegiatura", exact: true, component: Colegiatura },
     { path: "/pagos", exact: true, component: PasarelaPagos },
-    { path: "/datos-fiscales", exact: true, component: DatosFiscales },
+    { path: "/datos-facturacion", exact: true, component: DatosFiscales },
 
     
  
