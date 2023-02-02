@@ -1,9 +1,9 @@
 import { Redirect } from "react-router-dom"
 import Login from "../pages/Authentication/Login"
 import Logout from "../pages/Authentication/Logout"
+import Carrito from "../pages/Carrito"
 import Colegiatura from "../pages/Colegiatura"
 import Dashboard from "../pages/Dashboard"
-import PasarelaPagos from "../pages/PasarelaPagos"
 import DatosFiscales from "../pages/DatosFiscales"
 
 const authProtectedRoutes = [
@@ -27,7 +27,7 @@ const adminRoutes = [
 const managerRoutes = [
      //satges
     { path: "/colegiatura", exact: true, component: Colegiatura },
-    { path: "/pagos", exact: true, component: PasarelaPagos },
+    { path: "/carrito", exact: true, component: Carrito },
     { path: "/datos-facturacion", exact: true, component: DatosFiscales },
 
     

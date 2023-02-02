@@ -69,7 +69,7 @@ export default function FormDatosFiscales(){
         <>
             <Row>
                 <Col>
-                    <Alert color="warning" className="p-2">
+                    <Alert color="warning" className="p-2" fade={false}>
                         <div className="mb-2">
                             A partir del 1ro Enero 2022 y de acuerdo con la versión 4 del CFDI todos los pagos deberán
                             estar ligados a un R.F.C. Por favor  llene todos los datos que se solicitan, en caso de que 

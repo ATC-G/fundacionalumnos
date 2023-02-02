@@ -4,3 +4,4 @@ export const ERROR_SERVER = "Error del servidor!. Contactar con el admin"
 export const FIELD_REQUIRED = "Campo requerido"
 export const SELECT_OPTION = 'Seleccionar opción'
 export const DELETE_SUCCESS = 'Eliminado correctamente!'
+export const PRODUCT_IN_CAR = "Este producto ya se encuentra en el carrito"

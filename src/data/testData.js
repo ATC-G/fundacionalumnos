@@ -1,39 +1,35 @@
 export const testItemsColegiatura = [
     {
-        noDocumento: 2,
-        mes: 'Octubre',
-        monto: '$3,612.00',
-        beca: '$612.00',
-        interes: '$20.00',
-        totalPagar: '$3020.00',
-        estatus: 'Vencida'
+        referencia: 'CI01015385',
+        descripcion: 'Incripción bachillerato',
+        cargo: 3612,
+        abono: 612,
+        pendiente: 20,
+        fechaLimite: '21-07-2022'
     },
     {
-        noDocumento: 3,
-        mes: 'Octubre',
-        monto: '$3,612.00',
-        beca: '$612.00',
-        interes: '$20.00',
-        totalPagar: '$3020.00',
-        estatus: 'Vencida'
+        referencia: 'CI01015386',
+        descripcion: 'Taller de lectura',
+        cargo: 3612,
+        abono: 612,
+        pendiente: 20,
+        fechaLimite: '21-07-2022',
     },
     {
-        noDocumento: 4,
-        mes: 'Octubre',
-        monto: '$3,612.00',
-        beca: '$612.00',
-        interes: '$20.00',
-        totalPagar: '$3020.00',
-        estatus: 'Vencida'
+        referencia: 'CI01015387',
+        descripcion: 'Plan de previsión de orfanato',
+        cargo: 3612,
+        abono: 612,
+        pendiente: 20,
+        fechaLimite: '21-07-2022',
     },
     {
-        noDocumento: 5,
-        mes: 'Octubre',
-        monto: '$3,612.00',
-        beca: '$612.00',
-        interes: '$20.00',
-        totalPagar: '$3020.00',
-        estatus: 'Vencida'
+        referencia: 'CI01015388',
+        descripcion: 'Colegiatura 01 Bachillerato del mes de Septiembre',
+        cargo: 3612,
+        abono: 612,
+        pendiente: 20,
+        fechaLimite: '21-07-2022',
     }
 ]
 

@@ -106,12 +106,6 @@ function Sidebar(){
                         </Link> 
                       </li>
                       <li>
-                        <Link to="/pagos" className="">
-                            <i className="bx bx-money"></i>
-                            <span>Pagos</span>
-                        </Link>           
-                      </li>
-                      <li>
                         <Link to="/datos-facturacion" className="">
                             <i className="bx bx-shield-quarter"></i>
                             <span>Datos de facturación</span>
