@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.svg";
 import logoLightSvg from "../../assets/images/logo-light.svg";
+import logoWhite from '../../assets/images/ui-white.png'
 import ProfileMenu from "./ProfileMenu";
 import CartShooping from "./CartShooping";
 
@@ -55,13 +56,13 @@ function Header(){
                 <div className="navbar-brand-box d-lg-none d-md-block">
                   <Link to="/" className="logo logo-dark">
                     <span className="logo-sm">
-                      <img src={logo} alt="" height="22" />
+                      <img src={logoWhite} alt="" height="22" />
                     </span>
                   </Link>
     
                   <Link to="/" className="logo logo-light">
                     <span className="logo-sm">
-                      <img src={logoLightSvg} alt="" height="22" />
+                      <img src={logoWhite} alt="" height="22" />
                     </span>
                   </Link>
                 </div>
@@ -79,7 +80,7 @@ function Header(){
               </div>
               <div className="d-flex">
                 <div className="dropdown d-inline-block d-lg-none ms-2">
-                  <button
+                  {/* <button
                     onClick={() => {
                       setsearch(!search);
                     }}
@@ -96,8 +97,8 @@ function Header(){
                         : "dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     }
                     aria-labelledby="page-header-search-dropdown"
-                  >
-                    <form className="p-3">
+                  > */}
+                    {/* <form className="p-3">
                       <div className="form-group m-0">
                         <div className="input-group">
                           <input
@@ -113,8 +114,8 @@ function Header(){
                           </div>
                         </div>
                       </div>
-                    </form>
-                  </div>
+                    </form> */}
+                  {/* </div> */}
                 </div>
     
                 {/* <LanguageDropdown /> */}
