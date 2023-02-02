@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import SimpleBar from "simplebar-react";
 import MetisMenu from "metismenujs";
 
-import logo from "../../assets/images/logo.png";
+import logoWhite from "../../assets/images/ui-white.png";
 
 function Sidebar(){
     const ref = useRef();
@@ -87,39 +87,42 @@ function Sidebar(){
             <div className="navbar-brand-box">
               <Link to="/" className="logo logo-light">
                 <span className="logo-sm">
-                  <img src={logo} alt="" height="30" className="rounded-circle" />
+                  <img src={logoWhite} alt="" height="30" className="rounded-circle" />
                 </span>
                 <span className="logo-lg">
-                  <img src={logo} alt="" height="50" className="rounded-circle" />
+                  <img src={logoWhite} alt="" height="50" className="rounded-circle" />
                 </span>
+                <div className="d-none d-md-block title-logo">
+                  <h6 className="text-white">UNIVERSIDAD INTERCONTINENTAL</h6>
+                </div>
               </Link>
             </div>
-            <div data-simplebar className="h-100">
-            <SimpleBar className="h-100" ref={ref}>
-                <div id="sidebar-menu">
-                  <ul className="metismenu list-unstyled" id="side-menu">
-                      <li className="menu-title">Menu </li>
-                      <li> 
-                        <Link to="/colegiatura" className="">
-                            <i className="bx bx-calendar"></i>
-                            <span>Colegiatura</span>
-                        </Link> 
-                      </li>
-                      <li>
-                        <Link to="/datos-facturacion" className="">
-                            <i className="bx bx-shield-quarter"></i>
-                            <span>Datos de facturación</span>
-                        </Link>              
-                      </li>
-                      <li>
-                        <Link to="/ayuda" className="">
-                            <i className="bx bx-help-circle"></i>
-                            <span>Ayuda</span>
-                        </Link>              
-                      </li>
-                  </ul>
-                </div>
-            </SimpleBar>
+            <div data-simplebar className="h-100 mt-4 bar-menu">
+              <SimpleBar className="h-100" ref={ref}>
+                  <div id="sidebar-menu">
+                    <ul className="metismenu list-unstyled" id="side-menu">
+                        <li className="menu-title">Menu </li>
+                        <li> 
+                          <Link to="/colegiatura" className="">
+                              <i className="bx bx-calendar"></i>
+                              <span>Colegiatura</span>
+                          </Link> 
+                        </li>
+                        <li>
+                          <Link to="/datos-facturacion" className="">
+                              <i className="bx bx-shield-quarter"></i>
+                              <span>Datos de facturación</span>
+                          </Link>              
+                        </li>
+                        <li>
+                          <Link to="/ayuda" className="">
+                              <i className="bx bx-help-circle"></i>
+                              <span>Ayuda</span>
+                          </Link>              
+                        </li>
+                    </ul>
+                  </div>
+              </SimpleBar>
             </div>
             <div className="sidebar-background"></div>
           </div>

@@ -34,7 +34,7 @@ export default function ExtraInfo(){
                         </div>
                         <div className="avatar-sm rounded-circle bg-info  align-self-center mini-stat-icon">
                             <span className="avatar-title rounded-circle bg-info ">
-                            <i className="bx bx-news font-size-24" />
+                            <i className="bx bx-dollar-circle font-size-24" />
                             </span>
                         </div>
                         </div>
@@ -46,13 +46,13 @@ export default function ExtraInfo(){
                     <CardBody className="p-2">
                         <div className="d-flex">
                         <div className="flex-grow-1">
-                            <p className="text-warning fw-medium">Genera tu credencial UIC</p>
+                            <p className="text-warning fw-medium">Facturación</p>
                             <h5 className="mb-0">Solicitala aquí</h5>
                             <span className="text-muted fw-medium opacity-0">Ciclo: 2023-01</span>
                         </div>
                         <div className="avatar-sm rounded-circle bg-info  align-self-center mini-stat-icon">
                             <span className="avatar-title rounded-circle bg-info ">
-                            <i className="bx bx-user-circle font-size-24" />
+                            <i className="fas fa-file-invoice-dollar font-size-24" />
                             </span>
                         </div>
                         </div>

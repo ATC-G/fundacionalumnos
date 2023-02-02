@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { Card, CardBody, Col, Container, Form, Label, Row, Input, FormFeedback, Alert } from "reactstrap";
 
 import profile from "../../assets/images/profile-img2.png"
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/ui-logo.PNG";
 import { postJwtLogin } from "../../helpers/auth";
 import useHandleErrors from "../../hooks/useHandleErrors";
 
@@ -46,35 +46,16 @@ function Login(){
             <Container>
             <Row className="justify-content-center">
               <Col md={8} lg={6} xl={5}>
-                <Card className="overflow-hidden">
-                  <div className="bg-primary bg-soft">
-                    <Row>
-                      <Col lg="12">
-                        <div className="position-relative">
-                          <div className="position-absolute mt-2 ms-2">
-                            <h4 className="text-white">Escuela system</h4>
-                            <h6 className="text-white">Log in to access</h6>
-                          </div>
-                        </div>
-                        <img src={profile} alt="" className="img-fluid" />
-                      </Col>
-                    </Row>                    
-                  </div>
-                  <CardBody className="pt-0">
-                    <div>
-                      <Link to="/" className="auth-logo-light">
-                        <div className="avatar-md profile-user-wid mb-4 position-absolute">
-                          <span className="avatar-title rounded-circle bg-light">
-                            <img
-                              src={logo}
-                              alt=""
-                              className="rounded-circle"
-                              height="72"
-                            />
-                          </span>
-                        </div>
-                      </Link>
-                    </div>
+                <div className="text-center mb-4">
+                <img
+                    src={logo}
+                    alt=""
+                    className="rounded-circle"
+                    height="82"
+                  />
+                </div>
+                <Card className="overflow-hidden">                  
+                  <CardBody className="pt-0">                    
                     <div className="p-2 py-5">
                       <Form
                         className="form-horizontal"
@@ -134,10 +115,10 @@ function Login(){
   
                         <div className="mt-3 d-grid">
                           <button
-                            className="btn btn-primary btn-block"
+                            className="btn btn-success btn-block"
                             type="submit"
                           >
-                            Log In
+                            Ingresar
                           </button>
                         </div>
                       </Form>
@@ -146,8 +127,8 @@ function Login(){
                 </Card>
                 <div className="mt-5 text-center">
                   <p>
-                    © {new Date().getFullYear()} Escuela system. Created with {" "}
-                    <i className="mdi mdi-heart text-danger" /> by ATC-G
+                    © {new Date().getFullYear()} Universidad Intercontinental. Creado con {" "}
+                    <i className="mdi mdi-heart text-danger" /> por ATC-G
                   </p>
                 </div>
               </Col>
