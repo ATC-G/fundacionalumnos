@@ -15,7 +15,7 @@ function Login(){
         enableReinitialize: true,
     
         initialValues: {
-          username: "admin@admin.com" || '',
+          username: "demo@demo.com" || '',
           password: '123456',
         },
         validationSchema: Yup.object({
