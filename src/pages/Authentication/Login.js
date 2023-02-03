@@ -77,7 +77,7 @@ function Login(){
                         </Alert> }              
   
                         <div className="mb-3">
-                          <Label className="form-label">Username</Label>
+                          <Label className="form-label">Correo electrónico</Label>
                           <Input
                             name="username"
                             className="form-control"
@@ -96,7 +96,7 @@ function Login(){
                         </div>
 
                         <div className="mb-3">
-                          <Label className="form-label">Password</Label>
+                          <Label className="form-label">Contraseña</Label>
                           <Input
                             name="password"
                             value={validation.values.password || ""}
