@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.svg";
 import logoLightSvg from "../../assets/images/logo-light.svg";
-import logoWhite from '../../assets/images/ui-white.png'
+import logoSM from '../../assets/images/logo-sm.png'
 import ProfileMenu from "./ProfileMenu";
 import CartShooping from "./CartShooping";
 
@@ -56,13 +56,13 @@ function Header(){
                 <div className="navbar-brand-box d-lg-none d-md-block">
                   <Link to="/" className="logo logo-dark">
                     <span className="logo-sm">
-                      <img src={logoWhite} alt="" height="22" />
+                      <img src={logoSM} alt="" height="32" className="rounded"/>
                     </span>
                   </Link>
     
                   <Link to="/" className="logo logo-light">
                     <span className="logo-sm">
-                      <img src={logoWhite} alt="" height="22" />
+                      <img src={logoSM} alt="" height="32" className="rounded"/>
                     </span>
                   </Link>
                 </div>

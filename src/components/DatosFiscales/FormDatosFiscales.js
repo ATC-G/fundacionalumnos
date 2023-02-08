@@ -392,8 +392,7 @@ export default function FormDatosFiscales(){
                 
                 <div className="d-flex justify-content-end mb-3">
                     <Button
-                        color="success"
-                        className="btn btn-success"
+                        color="primary"
                         type="submit"
                     >Guardar
                     </Button>

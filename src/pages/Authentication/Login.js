@@ -3,8 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Card, CardBody, Col, Container, Form, Label, Row, Input, FormFeedback, Alert } from "reactstrap";
 
-import profile from "../../assets/images/profile-img2.png"
-import logo from "../../assets/images/ui-logo.PNG";
+import logo from "../../assets/images/ui-logo.png";
 import { postJwtLogin } from "../../helpers/auth";
 import useHandleErrors from "../../hooks/useHandleErrors";
 
@@ -51,7 +50,7 @@ function Login(){
                     src={logo}
                     alt=""
                     className="rounded-circle"
-                    height="82"
+                    height="150"
                   />
                 </div>
                 <Card className="overflow-hidden">                  
@@ -115,7 +114,7 @@ function Login(){
   
                         <div className="mt-3 d-grid">
                           <button
-                            className="btn btn-success btn-block"
+                            className="btn btn-primary btn-block"
                             type="submit"
                           >
                             Ingresar

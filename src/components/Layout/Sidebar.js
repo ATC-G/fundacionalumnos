@@ -4,6 +4,7 @@ import SimpleBar from "simplebar-react";
 import MetisMenu from "metismenujs";
 
 import logoWhite from "../../assets/images/ui-white.png";
+import logoSM from "../../assets/images/logo-sm.png";
 
 function Sidebar(){
     const ref = useRef();
@@ -84,17 +85,14 @@ function Sidebar(){
     return (
         <>
           <div className="vertical-menu">
-            <div className="navbar-brand-box">
+            <div className="navbar-brand-box  mt-1">
               <Link to="/" className="logo logo-light">
                 <span className="logo-sm">
-                  <img src={logoWhite} alt="" height="30" className="rounded-circle" />
+                  <img src={logoSM} alt="" height="30" className="rounded" />
                 </span>
                 <span className="logo-lg">
-                  <img src={logoWhite} alt="" height="50" className="rounded-circle" />
+                  <img src={logoWhite} alt="" height="100" className="rounded" />
                 </span>
-                <div className="d-none d-md-block title-logo">
-                  <h6 className="text-white">UNIVERSIDAD INTERCONTINENTAL</h6>
-                </div>
               </Link>
             </div>
             <div data-simplebar className="h-100 mt-4 bar-menu">
