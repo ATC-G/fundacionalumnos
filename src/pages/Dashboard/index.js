@@ -22,8 +22,14 @@ function Dashboard(){
                 <WelcomeCard />
               </Col>
               <Col xl="8">
-                <ExtraInfo />
-                <ListaAdeudos />
+                <Row>
+                  <Col xs='12'md="12" className="order-sm-1 order-2">
+                    <ExtraInfo />
+                  </Col>
+                  <Col xs='12'md="12" className="order-sm-2 order-1">
+                    <ListaAdeudos />
+                  </Col>
+                </Row>
               </Col>
             </Row>
 
