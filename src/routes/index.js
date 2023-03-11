@@ -5,6 +5,7 @@ import Carrito from "../pages/Carrito"
 import Colegiatura from "../pages/Colegiatura"
 import Dashboard from "../pages/Dashboard"
 import DatosFiscales from "../pages/DatosFiscales"
+import Pago from "../pages/Pago"
 
 const authProtectedRoutes = [
     { path: "/logout", component: Logout },
@@ -29,6 +30,7 @@ const managerRoutes = [
     { path: "/colegiatura", exact: true, component: Colegiatura },
     { path: "/carrito", exact: true, component: Carrito },
     { path: "/datos-facturacion", exact: true, component: DatosFiscales },
+    { path: "/pago", exact: true, component: Pago },
 
     
  

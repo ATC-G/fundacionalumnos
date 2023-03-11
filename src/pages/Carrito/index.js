@@ -1,14 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Button, Card, CardBody, CardHeader, Col, Container, Row } from "reactstrap";
 import Breadcrumbs from "../../components/Common/Breadcrumbs";
 import { removeItem } from "../../redux/cartSlice";
 import { numberFormat } from "../../utils/formatNumber";
-
-const sum = (elements) => {
-  const result = elements.reduce((acc, curr) => acc + curr.pendiente, 0)
-  return result;
-}
+import sumCart from "../../utils/sumCart";
 
 function Carrito(){  
     const cart = useSelector((state) => state.cart)
@@ -50,10 +46,10 @@ function Carrito(){
                               ))
                             }
                             <div className="d-flex justify-content-end alignt-items-center py-3 border-bottom">
-                              <h1><span className="pe-3">Total</span> <span>{numberFormat(sum(cart))}</span></h1>
+                              <h1><span className="pe-3">Total</span> <span>{numberFormat(sumCart(cart))}</span></h1>
                             </div>
                             <div className="d-flex justify-content-end py-3">
-                              <Button color="success" className="fw-medium fs-5 p-3">Continuar con el pago</Button>
+                              <Link to="/pago" className="btn btn-success fw-medium fs-5 p-3">Continuar con el pago</Link>
                             </div>
                           </>                          
                         }                        
