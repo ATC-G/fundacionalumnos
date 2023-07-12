@@ -7,32 +7,49 @@ import SimpleLoad from "../../components/Loader/SimpleLoad";
 import cifrarXML from "../../utils/cifrarXML";
 import generacionServicio from "../../utils/generacionServicio";
 import generateXML from "../../utils/generateXML";
+import { sendPaymentData } from "../../helpers/payment";
 
 function Pago(){  
     const cart = useSelector((state) => state.cart)
     const dispatch = useDispatch();
     const [statesLigaPago, setStatesLigaPago] = useState('process')
-
-    const generateLigaPago = () => {
-        try {
-            const xml = generateXML(cart)
-            console.log(xml.toString())    
-            const xmlCifrado = cifrarXML(xml.toString())
-            console.log(xmlCifrado)
-            setStatesLigaPago('success')
-            const servicioGenerado = generacionServicio(xmlCifrado)
-        } catch (error) {
-            console.log(error)
-        }
-        
-    }
-
+    
     useEffect(() => {
+      console.log('entro')
         //console.log(cart)
         if(cart.length === 0){
             setStatesLigaPago('noProduct')
         }else{
-            generateLigaPago()
+            const processPaymentData = async () => {
+              try {
+                const paymentFirstCart = {
+                  "reference": cart[0].referencia,
+                  "amount": 50,
+                  "name": "Ana Lucia",
+                  "currency": "mxn",
+                  "mail": "ana@gmail.com",
+                  "celular": "9985632250",
+                  "street": "Agramonte",
+                  "city": "Cancun",
+                  "state": "Quintana Roo",
+                  "zipCode": "77500"
+                }
+                console.log(paymentFirstCart)
+                const response = await sendPaymentData(paymentFirstCart);
+                console.log(response)
+      
+      
+                  // const xml = generateXML(cart)
+                  // console.log(xml.toString())    
+                  // const xmlCifrado = cifrarXML(xml.toString())
+                  // console.log(xmlCifrado)
+                  // setStatesLigaPago('success')
+                  // const servicioGenerado = generacionServicio(xmlCifrado)
+              } catch (error) {
+                  console.log(error)
+              }
+            }
+            processPaymentData()
         }
     },[])
 

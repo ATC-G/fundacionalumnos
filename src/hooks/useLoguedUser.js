@@ -8,7 +8,7 @@ export default function useLoguedUser(){
         if(localStorage.getItem("escuelafrontend")){
             const obj = JSON.parse(localStorage.getItem("escuelafrontend"))
             const decode = jwtDecode(obj.token)
-            setUserLogued(decode.user)
+            setUserLogued(decode)
         }
     }, [])
 

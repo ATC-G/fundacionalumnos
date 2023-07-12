@@ -3,7 +3,8 @@ import axios from "axios";
 //pass new generated access token here
 const token = localStorage.getItem("escuelafrontend") ? `Bearer ${JSON.parse(localStorage.getItem("escuelafrontend")).token}` : "";
 //apply base url for axios
-const API_URL = 'http://localhost:5000/api';
+const API_VERSION = "v1"
+const API_URL = `https://escuelas-api.onrender.com/api/${API_VERSION}`;
 
 const axiosApi = axios.create({
     baseURL: API_URL,
@@ -17,7 +18,7 @@ axiosApi.interceptors.response.use(
     error => {
         console.log(error)
         if(error.response === undefined){
-            alert("Seems there are some issue with his internet, check your conextion please")
+            return Promise.reject(error);
         }else if(error.response.status===403){
             window.localStorage.removeItem('escuelafrontend');
             window.location.reload();
@@ -50,7 +51,6 @@ export async function del(url, config = {}) {
 }
 
 export async function postFile(url, data, config = {}) {
-    console.log('entro')
     return axiosApi
       .post(url, { ...data }, { 
             headers: {
