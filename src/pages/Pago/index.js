@@ -13,6 +13,7 @@ function Pago(){
     const cart = useSelector((state) => state.cart)
     const dispatch = useDispatch();
     const [statesLigaPago, setStatesLigaPago] = useState('process')
+    const [linkCobro, setLinkCobro]  =useState("")
     
     useEffect(() => {
       console.log('entro')
@@ -24,7 +25,7 @@ function Pago(){
               try {
                 const paymentFirstCart = {
                   "reference": cart[0].referencia,
-                  "amount": 50,
+                  "amount": 10,
                   "name": "Ana Lucia",
                   "currency": "mxn",
                   "mail": "ana@gmail.com",
@@ -37,13 +38,17 @@ function Pago(){
                 console.log(paymentFirstCart)
                 const response = await sendPaymentData(paymentFirstCart);
                 console.log(response)
-      
-      
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(response,"text/xml");
+                const url = xmlDoc.getElementsByTagName("nb_url")[0].childNodes[0].nodeValue
+                console.log(url)
+                setLinkCobro(url)
+                
                   // const xml = generateXML(cart)
                   // console.log(xml.toString())    
                   // const xmlCifrado = cifrarXML(xml.toString())
                   // console.log(xmlCifrado)
-                  // setStatesLigaPago('success')
+                  setStatesLigaPago('success')
                   // const servicioGenerado = generacionServicio(xmlCifrado)
               } catch (error) {
                   console.log(error)
@@ -58,9 +63,9 @@ function Pago(){
         noProduct: <Alert color="info" className="m-0">No hay productos a cobrar</Alert>,
         success: <iframe 
                     title="Formulario de cobro"
-                    src="https://sandboxpol.mit.com.mx/i/SNDBX01"
+                    src={linkCobro}
                     width="320px" 
-                    height="480px" 
+                    height="680px" 
                     frameBorder="0" 
                     scrolling="no"
                     seamless="seamless"
