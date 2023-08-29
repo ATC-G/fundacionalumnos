@@ -32,3 +32,5 @@ const states = [
   { id: "YU", name: "Yucatán" },
   { id: "ZA", name: "Zacatecas" },
 ];
+
+export { states };

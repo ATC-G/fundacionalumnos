@@ -51,7 +51,6 @@ function Login() {
       }
     },
   });
-  console.log(validation.errors);
   return (
     <div className="account-pages my-5 pt-sm-5">
       <Container>

@@ -42,11 +42,6 @@ export default function BuscarColegiatura({ ciclosOpt, buscarRef }) {
                   <option value={it.id}>{it.name}</option>
                 ))}
               </Input>
-              {formik.errors.search && (
-                <div className="invalid-tooltip d-block">
-                  {formik.errors.search}
-                </div>
-              )}
               <div className="input-group-append">
                 <Button
                   type="submit"
@@ -57,6 +52,11 @@ export default function BuscarColegiatura({ ciclosOpt, buscarRef }) {
                 </Button>
               </div>
             </InputGroup>
+            {formik.errors.search && (
+              <div className="invalid-tooltip d-block">
+                {formik.errors.search}
+              </div>
+            )}
           </div>
         </Col>
       </Row>
