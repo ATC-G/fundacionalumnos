@@ -13,7 +13,7 @@ const axiosApi = axios.create({
 });
 
 axiosApi.defaults.headers.common["Authorization"] = token;
-axiosApi.defaults.headers.common["Content-Type"] = "multipart/form-data";
+//axiosApi.defaults.headers.common["Content-Type"] = "multipart/form-data";
 
 axiosApi.interceptors.response.use(
   (response) => response,
