@@ -183,7 +183,7 @@ function Colegiatura() {
       setLoading(true);
       const query = `razonSocialId=${alumno.razonSocial}&colegioId=${colegio.id}&cicloId=${cicloId}`;
       const response = await getReferencias(query);
-      console.log(response);
+      //console.log(response);
       if (response.length > 0) setItems(response[0].referencias);
       setLoading(false);
     } catch (error) {

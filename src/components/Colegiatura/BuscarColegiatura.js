@@ -39,7 +39,9 @@ export default function BuscarColegiatura({ ciclosOpt, buscarRef }) {
               >
                 <option value="">{SELECT_OPTION}</option>
                 {ciclosOpt.map((it) => (
-                  <option value={it.id}>{it.name}</option>
+                  <option value={it.id} key={it.id}>
+                    {it.name}
+                  </option>
                 ))}
               </Input>
               <div className="input-group-append">

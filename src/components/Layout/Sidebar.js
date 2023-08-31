@@ -106,18 +106,12 @@ function Sidebar() {
                     <span>Colegiatura</span>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/datos-facturacion" className="">
                     <i className="bx bx-shield-quarter"></i>
                     <span>Datos de facturación</span>
                   </Link>
-                </li>
-                <li>
-                  <Link to="/ayuda" className="">
-                    <i className="bx bx-help-circle"></i>
-                    <span>Ayuda</span>
-                  </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </SimpleBar>
