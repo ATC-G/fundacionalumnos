@@ -23,6 +23,7 @@ import * as Yup from "yup";
 import { FIELD_REQUIRED, SELECT_OPTION } from "../../constants/messages";
 import { states } from "../../constants/utils";
 import FullLoad from "../../components/Loader/FullLoad";
+import { cleanCart } from "../../redux/cartSlice";
 
 function Pago() {
   const cart = useSelector((state) => state.cart);
